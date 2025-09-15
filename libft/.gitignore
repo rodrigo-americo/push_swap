@@ -1,0 +1,30 @@
+# LibftTester
+libftTester/
+libft_tester/
+tester/
+tests/
+
+# Binários e objetos
+*.o
+*.a
+*.out
+*.exe
+
+# Arquivos temporários de compilação
+*.dSYM/
+*.swp
+*.tmp
+
+# Arquivos de log
+*.log
+
+# Backups do editor
+*~
+.#*
+
+# VSCode
+.vscode/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
