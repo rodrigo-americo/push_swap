@@ -6,7 +6,7 @@
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 11:43:00 by rgregori          #+#    #+#             */
-/*   Updated: 2025/09/13 14:17:33 by rgregori         ###   ########.fr       */
+/*   Updated: 2025/09/15 16:00:15 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_move_idx_to_top(t_stack *s, int target_idx, int log)
 		pos++;
 		node = node->next;
 	}
-	if (!node || pos <= 0 && pos > s->size - 1)
+	if (!node || (pos <= 0 || pos > (int)(s->size - 1)))
 		return ;
 	ft_rotate_to_top(s, pos, log);
 }

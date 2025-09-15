@@ -1,46 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*   ft_log.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/12 12:46:02 by rgregori          #+#    #+#             */
-/*   Updated: 2025/09/12 12:46:44 by rgregori         ###   ########.fr       */
+/*   Created: 2025/09/11 16:06:17 by rgregori          #+#    #+#             */
+/*   Updated: 2025/09/15 14:38:24 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_bool	ft_is_number(const char *s)
+int	ft_error(void)
 {
-	int	i;
-	int	has_digit;
-
-	if (s[0] == '\0')
-		return (false);
-	i = 0;
-	if (s[i] == '+' || s[i] == '-')
-		i++;
-	has_digit = false;
-	while (s[i])
-	{
-		if (s[i] < '0' || s[i] > '9')
-			return (false);
-		has_digit = true;
-		i++;
-	}
-	return (has_digit);
+	write(2, "Error\n", 6);
+	return (1);
 }
 
-void	ft_free_split(char **s)
+void	ft_print_stack(const t_stack *s)
 {
-	int	i;
+	t_node	*node;
 
-	i = 0;
-	while (s[i])
+	if (!s || s->size == 0)
+		return ;
+	node = s->top;
+	while (node)
 	{
-		free(s[i]);
-		i++;
+		ft_putnbr_fd(node->val, 1);
+		node = node->next;
 	}
 }

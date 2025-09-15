@@ -6,7 +6,7 @@
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 15:45:07 by rgregori          #+#    #+#             */
-/*   Updated: 2025/09/12 16:26:51 by rgregori         ###   ########.fr       */
+/*   Updated: 2025/09/15 17:45:50 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ void	ft_sa(t_stack *a, int log)
 	if (!a)
 		return ;
 	swap = ft_swap_top(a);
-	if (log == 1 && swap == true)
-		ft_printf("sa\n");
+	if (log == 1)
+		write(1, "sa\n", 3);
 }
 
 void	ft_sb(t_stack *b, int log)
@@ -56,8 +56,8 @@ void	ft_sb(t_stack *b, int log)
 	if (!b)
 		return ;
 	swap = ft_swap_top(b);
-	if (log == 1 && swap == true)
-		ft_printf("sb\n");
+	if (log == 1)
+		write(1, "sb\n", 3);
 }
 
 void	ft_ss(t_stack *a, t_stack *b, int log)
@@ -69,6 +69,6 @@ void	ft_ss(t_stack *a, t_stack *b, int log)
 		return ;
 	swap_a = ft_swap_top(a);
 	swap_b = ft_swap_top(b);
-	if (log == 1 && (swap_a || swap_b))
-		ft_printf("ss\n");
+	if (log == 1)
+		write(1, "ss\n", 3);
 }

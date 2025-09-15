@@ -6,7 +6,7 @@
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 10:32:29 by rgregori          #+#    #+#             */
-/*   Updated: 2025/09/13 11:52:16 by rgregori         ###   ########.fr       */
+/*   Updated: 2025/09/15 16:17:51 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_ra(t_stack *a, int log)
 	node = ft_stack_pop_top(a);
 	ft_stack_push_bot(a, node);
 	if (log == 1)
-		ft_printf("ra\n");
+		write(1, "ra\n", 3);
 }
 
 void	ft_rb(t_stack *b, int log)
@@ -33,7 +33,7 @@ void	ft_rb(t_stack *b, int log)
 	node = ft_stack_pop_top(b);
 	ft_stack_push_bot(b, node);
 	if (log == 1)
-		ft_printf("rb\n");
+		write(1, "rb\n", 3);
 }
 
 void	ft_rr(t_stack *a, t_stack *b, int log)
@@ -50,5 +50,5 @@ void	ft_rr(t_stack *a, t_stack *b, int log)
 	if (has_b)
 		ft_rb(b, 0);
 	if (log == 1 && (has_a && has_b))
-		write(1, "rr\n", 4);
+		write(1, "rr\n", 3);
 }

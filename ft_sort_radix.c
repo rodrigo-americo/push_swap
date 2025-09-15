@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_log.c                                           :+:      :+:    :+:   */
+/*   ft_sort_radix.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/11 16:06:17 by rgregori          #+#    #+#             */
-/*   Updated: 2025/09/12 14:18:15 by rgregori         ###   ########.fr       */
+/*   Created: 2025/09/15 12:44:04 by rgregori          #+#    #+#             */
+/*   Updated: 2025/09/15 16:10:24 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_error(void)
+void	ft_sort_radix(t_stack *a, t_stack *b)
 {
-	write(2, "Error\n", 6);
-	return (1);
-}
+	int	i;
+	int	j;
+	int	max_bits;
+	int	size;
 
-void	ft_print_stack(const t_stack *s)
-{
-	t_node	*node;
-	t_node	*next_node;
-
-	if (!s || s->size == 0)
-		return ;
-	node = s->top;
-	while (node)
+	size = a->size;
+	max_bits = ft_get_max_bits(a);
+	i = 0;
+	while (i < max_bits)
 	{
-		next_node = node->next;
-		ft_printf("%d\n", node->val);
-		node = next_node;
+		j = 0;
+		while (j < size)
+		{
+			if (((a->top->idx >> i) & 1) == 0)
+				ft_pb(a, b, LOG);
+			else
+				ft_ra(a, LOG);
+			j++;
+		}
+		while (b->size > 0)
+			ft_pa(a, b, LOG);
+		i++;
 	}
 }

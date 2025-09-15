@@ -6,7 +6,7 @@
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 13:24:26 by rgregori          #+#    #+#             */
-/*   Updated: 2025/09/13 15:05:59 by rgregori         ###   ########.fr       */
+/*   Updated: 2025/09/15 17:12:17 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 # include <unistd.h>
 # include <limits.h>
 # include "libft.h"
-# include "ft_printf.h"
+
+# define LOG 1
 
 /* ============================== */
 /*            STRUCTS             */
@@ -67,6 +68,7 @@ typedef struct s_cheapest_ctx
 
 t_stack	*ft_stack_new(char name);
 void	ft_stack_clear(t_stack **s);
+t_stack	*ft_handle_stack(t_intvec *vals);
 t_node	*ft_node_new(int val, int idx);
 void	ft_stack_push_top(t_stack *s, t_node *n);
 void	ft_stack_push_bot(t_stack *s, t_node *n);
@@ -77,7 +79,7 @@ t_node	*ft_stack_pop_bot(t_stack *s);
 /*            PARSING             */
 /* ============================== */
 
-int		ft_parse_args(int ac, char **av, t_intvec *vals);
+t_bool	ft_parse_args(int ac, char **av, t_intvec *vals);
 t_bool	ft_is_number(const char *s);
 t_bool	ft_atoi_safe(const char *s, int *out);
 t_bool	ft_has_duplicates(const t_intvec *v);
@@ -87,10 +89,11 @@ int		*ft_copy_data(int *data, int len);
 /*             CHECKS             */
 /* ============================== */
 
-t_bool		ft_is_sorted(const t_stack *s);
-int			ft_min_idx(const t_stack *s);
-int			ft_max_idx(const t_stack *s);
-int			ft_pos_of_idx(const t_stack *s, int idx);
+t_bool	ft_is_sorted(const t_stack *s);
+int		ft_min_idx(const t_stack *s);
+int		ft_max_idx(const t_stack *s);
+int		ft_pos_of_idx(const t_stack *s, int idx);
+void	ft_sort_int_tab(int *tab, int size);
 
 /* ============================== */
 /*            intvec		      */
@@ -110,19 +113,14 @@ void	ft_free_split(char **s);
 
 int		ft_normalize_indice(int *data, int len, int val);
 int		ft_get_max_bits(const t_stack *a);
-/* nº de bits necessário para representar o maior idx */
-
 void	ft_sa(t_stack *a, int log);
 void	ft_sb(t_stack *b, int log);
 void	ft_ss(t_stack *a, t_stack *b, int log);
-
 void	ft_pa(t_stack *a, t_stack *b, int log);
 void	ft_pb(t_stack *a, t_stack *b, int log);
-
 void	ft_ra(t_stack *a, int log);
 void	ft_rb(t_stack *b, int log);
 void	ft_rr(t_stack *a, t_stack *b, int log);
-
 void	ft_rra(t_stack *a, int log);
 void	ft_rrb(t_stack *b, int log);
 void	ft_rrr(t_stack *a, t_stack *b, int log);
@@ -143,12 +141,8 @@ int		ft_cheapest_pos_to_push(const t_stack *s, int limit_low,
 
 void	ft_sort_3(t_stack *a);
 void	ft_sort_5(t_stack *a, t_stack *b);
-
 void	ft_sort_radix(t_stack *a, t_stack *b);
-/* radix por bits sobre 'idx' normalizado */
-
 void	ft_sort_chunks(t_stack *a, t_stack *b, int chunks);
-/* divide em 'chunks' por faixa de idx e ordena */
 
 /* ============================== */
 /*             LOG/ERR            */

@@ -6,7 +6,7 @@
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 13:24:26 by rgregori          #+#    #+#             */
-/*   Updated: 2025/09/11 13:55:45 by rgregori         ###   ########.fr       */
+/*   Updated: 2025/09/15 11:16:06 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include "libft.h"
-# include "ft_printf.h"
+
 /* ============================== */
 /*            STRUCTS             */
 /* ============================== */

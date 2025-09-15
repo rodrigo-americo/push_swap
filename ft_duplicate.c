@@ -6,7 +6,7 @@
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 10:31:42 by rgregori          #+#    #+#             */
-/*   Updated: 2025/09/13 14:57:54 by rgregori         ###   ########.fr       */
+/*   Updated: 2025/09/15 16:19:29 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	ft_swap(int *a, int *b)
 	*b = hold;
 }
 
-static void	ft_sort_int_tab(int *tab, int size)
+void	ft_sort_int_tab(int *tab, int size)
 {
 	int	i;
 	int	j;
@@ -58,7 +58,7 @@ int	*ft_copy_data(int *data, int len)
 	if (!cop)
 		return (NULL);
 	i = 0;
-	while (i < len)
+	while ((int)i < len)
 	{
 		cop[i] = data[i];
 		i++;
@@ -76,7 +76,7 @@ t_bool	ft_has_duplicates(const t_intvec *v)
 		return (false);
 	cop = ft_copy_data(v->data, v->len);
 	if (!cop)
-		ft_error_and_exit();
+		ft_error();
 	has_cop = false;
 	i = 0;
 	ft_sort_int_tab(cop, v->len);

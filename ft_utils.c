@@ -1,27 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_node.c                                          :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/12 13:09:11 by rgregori          #+#    #+#             */
-/*   Updated: 2025/09/13 14:36:41 by rgregori         ###   ########.fr       */
+/*   Created: 2025/09/12 12:46:02 by rgregori          #+#    #+#             */
+/*   Updated: 2025/09/15 16:39:17 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*ft_node_new(int val, int idx)
+t_bool	ft_is_number(const char *s)
 {
-	t_node	*node;
+	int	i;
+	int	has_digit;
 
-	node = malloc(sizeof(t_node));
-	if (!node)
-		return (NULL);
-	node->val = val;
-	node->idx = 0;
-	node->next = NULL;
-	node->prev = NULL;
-	return (node);
+	if (s[0] == '\0')
+		return (false);
+	i = 0;
+	if (s[i] == '+' || s[i] == '-')
+		i++;
+	has_digit = false;
+	while (s[i])
+	{
+		if (s[i] < '0' || s[i] > '9')
+			return (false);
+		has_digit = true;
+		i++;
+	}
+	return (has_digit);
+}
+
+void	ft_free_split(char **s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		free(s[i]);
+		i++;
+	}
+	free(s);
 }
