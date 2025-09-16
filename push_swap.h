@@ -6,7 +6,7 @@
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 13:24:26 by rgregori          #+#    #+#             */
-/*   Updated: 2025/09/15 17:12:17 by rgregori         ###   ########.fr       */
+/*   Updated: 2025/09/16 17:21:38 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,14 @@ typedef struct s_cheapest_ctx
 	int	best_cost;
 	int	best_pos;
 }	t_cheapest_ctx;
+
+typedef struct s_move
+{
+	int	cost;
+	int	pos_a;
+	int	pos_b;
+}	t_move;
+
 
 /* ============================== */
 /*        CRIAÇÃO/DESTRUIÇÃO      */
@@ -134,7 +142,6 @@ void	ft_rotate_to_top(t_stack *s, int pos, int log);
 void	ft_move_idx_to_top(t_stack *s, int target_idx, int log);
 int		ft_cheapest_pos_to_push(const t_stack *s, int limit_low,
 			int limit_high);
-
 /* ============================== */
 /*        ESTRATÉGIAS/ALGO        */
 /* ============================== */
@@ -142,12 +149,14 @@ int		ft_cheapest_pos_to_push(const t_stack *s, int limit_low,
 void	ft_sort_3(t_stack *a);
 void	ft_sort_5(t_stack *a, t_stack *b);
 void	ft_sort_radix(t_stack *a, t_stack *b);
-void	ft_sort_chunks(t_stack *a, t_stack *b, int chunks);
-
+void	turk_sort(t_stack *a, t_stack *b);
 /* ============================== */
 /*             LOG/ERR            */
 /* ============================== */
 
 int		ft_error(void);
 void	ft_print_stack(const t_stack *s);
+void	ft_align_min_on_top(t_stack *a);
+int		ft_position_of_min(t_stack *a);
+int		calculate_cost(int pos_a, int size_a, int pos_b, int size_b);
 #endif

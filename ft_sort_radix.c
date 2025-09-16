@@ -6,7 +6,7 @@
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 12:44:04 by rgregori          #+#    #+#             */
-/*   Updated: 2025/09/15 16:10:24 by rgregori         ###   ########.fr       */
+/*   Updated: 2025/09/16 16:51:12 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	ft_sort_radix(t_stack *a, t_stack *b)
 		}
 		while (b->size > 0)
 			ft_pa(a, b, LOG);
+		if (ft_is_sorted(a))
+			break ;
 		i++;
 	}
 }

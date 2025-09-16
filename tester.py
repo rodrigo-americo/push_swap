@@ -33,7 +33,7 @@ show_extreme_sequences = False
 # E por fim, vários testes com 10 números
 # Pode por quantos números quiser
 # Mas na régua só será testado: [3, 5, 100, 500]
-test_groups = [3, 5, 100, 500]
+test_groups = [100, 500]
 
 
 # Aqui você deve por o range de números que deseja considerar ao fazer os testes
@@ -47,7 +47,7 @@ range_end = 2**31 - 1
 # números do `test_groups`
 # Se colocar muito, vai demorar demais para acabar
 # Padrão = 100
-test_num = 20
+test_num = 50
 
 
 # Daqui para baixo não precisa mexer

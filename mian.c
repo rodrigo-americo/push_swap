@@ -6,7 +6,7 @@
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:43:08 by rgregori          #+#    #+#             */
-/*   Updated: 2025/09/15 18:34:56 by rgregori         ###   ########.fr       */
+/*   Updated: 2025/09/16 17:12:22 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,7 @@ void	ft_sort_stack(t_stack *a)
 	else if (a->size <= 5)
 		ft_sort_5(a, b);
 	else
-	{
-		if (a->size <= 100)
-			ft_sort_chunks(a, b, 5);
-		else
-			ft_sort_radix(a, b);
-	}
+		turk_sort(a, b);
 	if (b)
 		ft_stack_clear(&b);
 }
@@ -61,7 +56,6 @@ int	main(int argc, char **argv)
 		return (ft_error());
 	}
 	ft_sort_stack(a);
-	//ft_print_stack(a);
 	ft_stack_clear(&a);
 	ft_intvec_free(&vals);
 	return (0);
