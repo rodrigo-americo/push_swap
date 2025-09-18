@@ -6,7 +6,7 @@
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 13:24:26 by rgregori          #+#    #+#             */
-/*   Updated: 2025/09/16 17:21:38 by rgregori         ###   ########.fr       */
+/*   Updated: 2025/09/18 11:38:17 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ typedef struct s_move
 	int	pos_a;
 	int	pos_b;
 }	t_move;
-
 
 /* ============================== */
 /*        CRIAÇÃO/DESTRUIÇÃO      */
@@ -159,4 +158,6 @@ void	ft_print_stack(const t_stack *s);
 void	ft_align_min_on_top(t_stack *a);
 int		ft_position_of_min(t_stack *a);
 int		calculate_cost(int pos_a, int size_a, int pos_b, int size_b);
+void	ft_execute_move(t_stack *a, t_stack *b, t_move *best);
+int		ft_find_position_in_a(t_stack *a, int value);
 #endif

@@ -6,7 +6,7 @@
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 13:36:39 by rgregori          #+#    #+#             */
-/*   Updated: 2025/09/12 13:45:54 by rgregori         ###   ########.fr       */
+/*   Updated: 2025/09/18 11:38:36 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	ft_stack_push_top(t_stack *s, t_node *n)
 		s->top = n;
 		n->prev = NULL;
 	}
-
 	s->size++;
 }
 
@@ -61,15 +60,12 @@ t_node	*ft_stack_pop_top(t_stack *s)
 
 	if (s->size == 0)
 		return (NULL);
-
 	node = s->top;
 	s->top = node->next;
-
 	if (s->top)
 		s->top->prev = NULL;
 	else
 		s->bot = NULL;
-
 	s->size--;
 	node->next = NULL;
 	node->prev = NULL;
@@ -82,15 +78,12 @@ t_node	*ft_stack_pop_bot(t_stack *s)
 
 	if (s->size == 0)
 		return (NULL);
-
 	node = s->bot;
 	s->bot = node->prev;
-
 	if (s->bot)
 		s->bot->next = NULL;
 	else
 		s->top = NULL;
-
 	s->size--;
 	node->next = NULL;
 	node->prev = NULL;

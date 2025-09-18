@@ -6,7 +6,7 @@
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 17:19:02 by rgregori          #+#    #+#             */
-/*   Updated: 2025/09/16 17:20:07 by rgregori         ###   ########.fr       */
+/*   Updated: 2025/09/18 11:17:41 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,46 @@ void	ft_align_min_on_top(t_stack *a)
 		while (pos++ < size)
 			ft_rra(a, LOG);
 	}
+}
+
+static void	ft_execute_doble_move(t_stack *a, t_stack *b, t_move *best)
+{
+	while (best->pos_a > 0 && best->pos_b > 0)
+	{
+		ft_rr(a, b, LOG);
+		best->pos_a--;
+		best->pos_b--;
+	}
+	while (best->pos_a < 0 && best->pos_b < 0)
+	{
+		ft_rrr(a, b, LOG);
+		best->pos_a++;
+		best->pos_b++;
+	}
+}
+
+void	ft_execute_move(t_stack *a, t_stack *b, t_move *best)
+{
+	ft_execute_doble_move(a, b, best);
+	while (best->pos_a > 0)
+	{
+		ft_ra(a, LOG);
+		best->pos_a--;
+	}
+	while (best->pos_a < 0)
+	{
+		ft_rra(a, LOG);
+		best->pos_a++;
+	}
+	while (best->pos_b > 0)
+	{
+		ft_rb(b, LOG);
+		best->pos_b--;
+	}
+	while (best->pos_b < 0)
+	{
+		ft_rrb(b, LOG);
+		best->pos_b++;
+	}
+	ft_pa(a, b, LOG);
 }

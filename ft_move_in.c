@@ -6,7 +6,7 @@
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 11:43:00 by rgregori          #+#    #+#             */
-/*   Updated: 2025/09/15 16:00:15 by rgregori         ###   ########.fr       */
+/*   Updated: 2025/09/18 11:36:09 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	ft_rotate_to_top(t_stack *s, int pos, int log)
 		}
 	}
 }
-
 
 void	ft_move_idx_to_top(t_stack *s, int target_idx, int log)
 {

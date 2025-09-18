@@ -6,7 +6,7 @@
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 16:14:19 by rgregori          #+#    #+#             */
-/*   Updated: 2025/09/15 16:15:29 by rgregori         ###   ########.fr       */
+/*   Updated: 2025/09/18 11:35:42 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int	ft_min_idx(const t_stack *s)
 
 	if (!s || s->size <= 0)
 		return (-1);
-
 	node = s->top;
 	min_idx = node->idx;
 	while (node)
@@ -54,7 +53,6 @@ int	ft_max_idx(const t_stack *s)
 
 	if (!s || s->size <= 0)
 		return (-1);
-
 	node = s->top;
 	max_idx = node->idx;
 	while (node)

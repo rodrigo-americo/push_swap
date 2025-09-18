@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils_intvec.c                                  :+:      :+:    :+:   */
+/*   ft_intvec.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 14:35:10 by rgregori          #+#    #+#             */
-/*   Updated: 2025/09/11 16:11:56 by rgregori         ###   ########.fr       */
+/*   Updated: 2025/09/18 11:36:26 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ static t_bool	ft_intvec_grow(t_intvec *v)
 	size_t	new_cap;
 	size_t	i;
 
-
 	if (v->cap == 0)
 		new_cap = 1;
 	else
@@ -57,7 +56,6 @@ static t_bool	ft_intvec_grow(t_intvec *v)
 
 t_bool	ft_intvec_push(t_intvec *v, int value)
 {
-
 	if (!v || !v->data)
 		return (false);
 	if (v->cap == v->len)

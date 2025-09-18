@@ -6,12 +6,11 @@
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 13:41:19 by rgregori          #+#    #+#             */
-/*   Updated: 2025/08/29 13:50:42 by rgregori         ###   ########.fr       */
+/*   Updated: 2025/09/18 11:35:53 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 static int	ft_atod_sign(const char *str, int *i)
 {

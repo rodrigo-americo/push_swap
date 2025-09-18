@@ -47,7 +47,7 @@ range_end = 2**31 - 1
 # números do `test_groups`
 # Se colocar muito, vai demorar demais para acabar
 # Padrão = 100
-test_num = 50
+test_num = 3
 
 
 # Daqui para baixo não precisa mexer

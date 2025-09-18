@@ -6,7 +6,7 @@
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 11:12:37 by rgregori          #+#    #+#             */
-/*   Updated: 2025/09/15 17:42:20 by rgregori         ###   ########.fr       */
+/*   Updated: 2025/09/18 11:37:15 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,3 @@ void	ft_sort_5(t_stack *a, t_stack *b)
 	ft_pa(a, b, LOG);
 	ft_pa(a, b, LOG);
 }
-
