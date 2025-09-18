@@ -41,14 +41,14 @@ void	ft_rrr(t_stack *a, t_stack *b, int log)
 	int	has_a;
 	int	has_b;
 
-	has_a = (!a || a->size < 2);
-	has_b = (!b || b->size < 2);
+	has_a = (a || a->size > 1);
+	has_b = (b || b->size > 1);
 	if (!has_a && !has_b)
 		return ;
 	if (has_a)
 		ft_rra(a, 0);
 	if (has_b)
 		ft_rrb(b, 0);
-	if (log == 1 && (has_a && has_b))
+	if (log == 1 && has_a && has_b)
 		write(1, "rrr\n", 4);
 }

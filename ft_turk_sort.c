@@ -46,7 +46,7 @@ int	ft_find_position_in_a(t_stack *a, int value)
 
 	// caso maior que o máximo → depois do máximo
 	if (value > max_val)
-		return (ft_position_of_min(a) + 1);
+		return (ft_position_of_min(a));
 
 	// caso geral → menor valor maior que "value"
 	cur = a->top;

@@ -25,7 +25,7 @@ LIBFT_A     := $(LIBFT_DIR)/libft.a
 OBJ_DIR     := obj
 
 SRCS := ft_movep.c ft_move_in.c ft_generic.c ft_parsing.c ft_utils.c ft_atoi_safe.c ft_sort_radix.c \
-		ft_intvec.c ft_stack.c ft_move_s.c mian.c ft_stack_utils.c ft_log.c ft_order_basi.c \
+		ft_intvec.c ft_stack.c ft_move_s.c main.c ft_stack_utils.c ft_log.c ft_order_basi.c \
 		ft_move_rr.c ft_build.c ft_move_r.c ft_checks.c ft_idx.c ft_node.c ft_duplicate.c ft_turk_sort.c \
 		ft_utils_turk.c
 OBJS        := $(addprefix $(OBJ_DIR)/,$(SRCS:.c=.o))

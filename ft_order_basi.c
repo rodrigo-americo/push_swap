@@ -43,7 +43,7 @@ void	ft_sort_3(t_stack *a)
 
 void	ft_sort_5(t_stack *a, t_stack *b)
 {
-	if (a->size != 5)
+	if (a->size < 4 || a->size > 5)
 		return ;
 	while (a->size > 3)
 	{
